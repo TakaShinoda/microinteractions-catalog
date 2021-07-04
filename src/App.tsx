@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faHeart } from '@fortawesome/free-regular-svg-icons'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import './App.css'
 
 function App() {
+  const [isLike, setIsLike] = useState(false)
+
+  const handleClickButton = () => {
+    console.log('click')
+    setIsLike(!isLike)
+    console.log(isLike)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button className="button-style">
+        <FontAwesomeIcon
+          className={isLike ? "icon-like" : "icon-default"}
+          icon={faHeart}
+          onClick={handleClickButton}
+        />
+      </button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

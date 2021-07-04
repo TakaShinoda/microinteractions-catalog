@@ -36,3 +36,51 @@
     transform: rotate(360deg);
   }
 }
+
+.button-style {
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 50%;
+}
+
+.icon-default {
+  padding: 10px;
+  font-size: 50px;
+  color: #ccc;
+}
+
+.icon-like {
+  padding: 10px;
+  font-size: 50px;
+  animation: heartAnimation .2s;
+  color: deeppink;
+}
+
+/* ---------------------------- */
+/* --- ハートアニメーション --- */
+/* ---------------------------- */
+@keyframes heartAnimation {
+  /* アニメーション開始から終了するまでどのようなアニメーションをするのか指定できるCSSの文法です */
+  0% {
+    /* アイコンサイズをもとのより小さくする */
+    transform: scale(0.5);
+  }
+  10% {
+    transform: scale(0.7);
+  }
+  30% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(1.5);
+  }
+  100% {
+    /* もとのサイズに戻す */
+    transform: scale(1.0);
+  }
+}
